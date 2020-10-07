@@ -13,15 +13,15 @@ export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
 
-  ...routerBase,
-
   // Target (https://go.nuxtjs.dev/config-target)
-  // target: 'static',
+  target: 'static',
+
+  ...routerBase,
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - nuxt-vuetify',
-    title: 'nuxt-vuetify',
+    titleTemplate: 'Aaron\'s Blug',
+    title: 'Aaron\'s Blug',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -45,7 +45,6 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    // 'nuxt-purgecss',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
