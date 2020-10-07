@@ -83,13 +83,13 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    publicPath: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/blug' : '/`',
+    publicPath: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/blug' : '/',
     devtools:
       process.env.DEPLOY_ENV === 'GH_PAGES' ? 'source-map' : 'eval-source-map',
     extractCSS: true,
   },
   content: {
     // $content api will be served on localhost:3000/content-api
-    apiPrefix: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/blug' : '/`',
+    apiPrefix: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/blug' : '/',
   }
 }
