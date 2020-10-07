@@ -88,4 +88,8 @@ export default {
       process.env.DEPLOY_ENV === 'GH_PAGES' ? 'source-map' : 'eval-source-map',
     extractCSS: true,
   },
+  content: {
+    // $content api will be served on localhost:3000/content-api
+    apiPrefix: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/blug' : '/`',
+  }
 }
