@@ -1,7 +1,7 @@
 <template>
   <v-app dark>
     <v-app-bar app dense>
-      <v-app-bar-nav-icon href="/">
+      <v-app-bar-nav-icon href="/blug">
         <div :style="{ border: '2px solid', padding: '4px' }">ATM</div>
       </v-app-bar-nav-icon>
       <v-spacer />
