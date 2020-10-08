@@ -8,7 +8,13 @@
           <v-list-item
             v-for="item in filterByCategory(category)"
             :key="item.path"
-            :to="item.path"
+            :to="{
+              name: 'notes-category-slug',
+              params: {
+                category: category,
+                slug: item.slug,
+              },
+            }"
             nuxt
             class="elevation-1"
           >
@@ -34,20 +40,21 @@
 
 <script>
 export default {
+  async asyncData({ $content }) {
+    const content = await $content('notes', { deep: true })
+      .only(['title', 'description', 'category', 'slug'])
+      .sortBy('updatedAt')
+      .limit(10)
+      .fetch()
+    let categories = content.map((c) => c.category)
+    categories = new Set(categories)
+    return { content, categories }
+  },
   data() {
     return {
       content: [],
       categories: [],
     }
-  },
-  async mounted() {
-    this.content = await this.$content('/', { deep: true })
-      .only(['title', 'description', 'category', 'slug'])
-      .sortBy('updatedAt')
-      .limit(10)
-      .fetch()
-    const categories = this.content.map((c) => c.category)
-    this.categories = new Set(categories)
   },
   methods: {
     filterByCategory(category) {

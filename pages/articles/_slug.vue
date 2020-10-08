@@ -4,13 +4,15 @@
 
 <script>
 export default {
+  async asyncData({ $content, route }) {
+    const pathWithoutPreceedingSlash = route.path.slice(1)
+    const content = await $content(pathWithoutPreceedingSlash).fetch()
+    return { content }
+  },
   data() {
     return {
       content: {},
     }
-  },
-  async mounted() {
-    this.content = await this.$content(this.$route.path).fetch()
   },
 }
 </script>

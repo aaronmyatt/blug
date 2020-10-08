@@ -3,10 +3,10 @@ import colors from 'vuetify/es5/util/colors'
 const routerBase =
   process.env.DEPLOY_ENV === 'GH_PAGES'
     ? {
-      router: {
-        base: '/blug/'
+        router: {
+          base: '/blug/',
+        },
       }
-    }
     : {}
 
 export default {
@@ -20,8 +20,8 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: 'Aaron\'s Blug',
-    title: 'Aaron\'s Blug',
+    titleTemplate: "Aaron's Blug",
+    title: "Aaron's Blug",
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -83,11 +83,8 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    publicPath: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/blug' : '/',
     devtools:
       process.env.DEPLOY_ENV === 'GH_PAGES' ? 'source-map' : 'eval-source-map',
     extractCSS: true,
   },
-  content: {
-  }
 }
