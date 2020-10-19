@@ -7,7 +7,11 @@ const routerBase =
           base: '/blug/',
         },
       }
-    : {}
+    : {
+        router: {
+          base: '/',
+        },
+      }
 
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
