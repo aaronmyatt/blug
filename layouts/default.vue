@@ -1,13 +1,10 @@
 <template>
   <v-app dark>
     <v-app-bar app dense>
-      <v-app-bar-nav-icon href="/blug">
+      <v-app-bar-nav-icon :to="{ path: '/' }">
         <div :style="{ border: '2px solid', padding: '4px' }">ATM</div>
       </v-app-bar-nav-icon>
       <v-spacer />
-
-      <v-btn nuxt :to="{ path: '/' }"> Home </v-btn>
-      <v-divider class="mx-4" vertical />
 
       <v-btn nuxt :to="{ path: '/notes' }"> N & R </v-btn>
 

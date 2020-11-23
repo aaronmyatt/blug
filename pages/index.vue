@@ -9,11 +9,7 @@
             v-for="item in filterByCategory(category)"
             :key="item.path"
             :to="{
-              name: 'notes-category-slug',
-              params: {
-                category: category,
-                slug: item.slug,
-              },
+              path: item.path,
             }"
             nuxt
             class="elevation-1"
