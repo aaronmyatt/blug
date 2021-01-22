@@ -1,5 +1,7 @@
 <template>
-  <h2>wat</h2>
+  <div>
+    <ContentTypeList :content-type="$route.name" title="Notes and Resources" />
+  </div>
 </template>
 
 <script>
