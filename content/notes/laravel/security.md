@@ -150,6 +150,13 @@ If you want to go a bit deeper and truly customise your Auth implementation, per
 
 ### Cheat Codes
 
+- `$this->authorize()`
+- `@can @elsecan @endcan`
+- `@cannot @elsecannot @endcannot`
+- `@unless @endunless` 
+- `@canany([...], $modelInstance) @elsecanany @endcanany`
+- `$user->can()` / `$user->cannot()`
+
 **Gates**
 - `Gate::define()`
 - `Gate::allows()`
