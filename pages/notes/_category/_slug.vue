@@ -6,9 +6,6 @@
 export default {
   async asyncData({ $content, route }) {
     const pathWithoutPreceedingSlash = route.path.slice(1)
-    console.log({
-      pathWithoutPreceedingSlash,
-    })
     const content = await $content(pathWithoutPreceedingSlash).fetch()
     return { content }
   },

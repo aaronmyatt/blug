@@ -1,7 +1,8 @@
 ---
 title: Laravel Authentication Docs Notes
 description: Laravel Authentication
-category: laravel, security, authentication
+category: laravel
+tags: laravel, security, authentication
 ---
 
 # Binging on Docs: Laravel [Authentication](https://laravel.com/docs/8.x/authentication)

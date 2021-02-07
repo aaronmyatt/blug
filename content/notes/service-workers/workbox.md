@@ -1,7 +1,8 @@
 ---
 title: Workbox
 description: Workbox whaaat?
-category: service-workers, pwa
+category: service-workers
+tags: service-workers, pwa
 ---
 
 # Getting inside the (Work)box

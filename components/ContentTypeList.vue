@@ -47,7 +47,7 @@ export default {
   },
   async created() {
     const content = await this.$content(this.contentType, { deep: true })
-      .only(['title', 'description', 'category', 'slug'])
+      .only(['title', 'description', 'category', 'slug', 'path'])
       .sortBy('updatedAt')
       .limit(10)
       .fetch()
