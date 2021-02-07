@@ -6,13 +6,31 @@ category: laravel, secrity, authentication
 
 # Binging on the Laravel Security Docs - My Notes.
 
+## [Authentication](https://laravel.com/docs/8.x/authentication) Notes
+### Cheat Codes
+Read further down to understand these examples better:
+
+- `$user = Auth::user();`
+- `$id = Auth::id();`
+- `$request->user()`
+- `if (Auth::check())`
+- `Auth::attempt(['email' => $email, 'password' => $password], $remember)`
+- `redirect()->intended('dashboard');` / `Redirect::intended('dashboard');`
+- `Auth::login($user, $remember = true);`
+- `Auth::loginUsingId(1, $remember = true);`
+- `Auth::logout();`
+  - `$request->session()->invalidate();`
+  - `$request->session()->regenerateToken();`
+  - `redirect('/');`
+
+
 **Links**
 - Your application's authentication configuration file is located at `config/auth.php`.
 - For a ready to go auth setup and full set of code examples to explore:
   - [Laravel Breeze](https://github.com/laravel/breeze)
   - E.g. How to implement [login](https://github.com/laravel/breeze/blob/1.x/stubs/App/Http/Controllers/Auth/AuthenticatedSessionController.php) from scratch
 
-**Cheat Codes**
+### Notes
 
 Interact with currently logged in user object:
 ```php
@@ -101,9 +119,6 @@ public function setRememberToken($value);
 public function getRememberTokenName();
 ```
 
-
-## [Authentication](https://laravel.com/docs/8.x/authentication) Notes
-
 If implementing the User model manually, ensure it has the correct fields:
   - `password` field > 60 chars
   - `remember_token` > 100 chars
@@ -133,8 +148,28 @@ If you want to go a bit deeper and truly customise your Auth implementation, per
 
 ## [Authorisation](https://laravel.com/docs/8.x/authorization) Notes
 
-## Gates
 ### Cheat Codes
+
+**Gates**
+- `Gate::define()`
+- `Gate::allows()`
+- `Gate::forUser()`
+- `Gate::any()` / `Gate::none()`
+- `Gate::check()`
+- `Gate::inspect()`
+- `Gate::authorize()`
+- `Gate::before()` / `Gate::after()`
+
+**Policies**
+
+For the most part, calling a Gate check will utilise corresponding Policy if it exists.
+
+- `php artisan make:policy PostPolicy`
+- `php artisan make:policy PostPolicy --model=Post`
+
+
+### Gates
+#### Notes
 
 Gates are checks that require a simple callback to determine if a user is permitted to perform the action behind the Gate.
 
@@ -196,7 +231,7 @@ Gate definitions may return a `Illuminate\Auth\Access\Response`, e.g.
 
 `Gate::before()` and `Gate::after()` may be leveraged to perform actions before and after checks have been performed.
 
-## Policies
+### Policies
 
 Policies are authorization classes that can provide model or resource specific checks. Typically, a Policy will map directly to a Model class and reflect its method/action structure 1-to-1, so that when someone tries to `modelInstance->save()` a Policies corresponding `save` method will be called first to ensure that user may perform that action.
 
