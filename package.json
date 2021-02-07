@@ -11,7 +11,7 @@
     "lint": "yarn lint:js --fix",
     "build:ghp": "DEPLOY_ENV=GH_PAGES nuxt build --modern",
     "generate:ghp": "DEPLOY_ENV=GH_PAGES nuxt generate --modern",
-    "deploy": "npm run generate:ghp && push-dir --dir=dist --branch=gh-pages --cleanup"
+    "deploy": "yarn generate:ghp && push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "@nuxt/content": "^1.8.1",
